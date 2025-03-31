@@ -69,3 +69,37 @@ impl std::fmt::Display for LogLevel {
         write!(f, "{}", self.to_level_string())
     }
 }
+
+// -------------------------------------------------------------------------------------------------
+//
+// Unit Tests.
+//
+// -------------------------------------------------------------------------------------------------
+
+#[cfg(test)]
+mod tests {
+    use super::LogLevel;
+
+    #[test]
+    fn test_to_level_string() {
+        assert_eq!(LogLevel::Info.to_level_string(), "INFO");
+        assert_eq!(LogLevel::Debug.to_level_string(), "DEBUG");
+        assert_eq!(LogLevel::Warning.to_level_string(), "WARNING");
+        assert_eq!(LogLevel::Error.to_level_string(), "ERROR");
+    }
+
+    #[test]
+    fn test_display_trait() {
+        assert_eq!(format!("{}", LogLevel::Info), "INFO");
+        assert_eq!(format!("{}", LogLevel::Debug), "DEBUG");
+        assert_eq!(format!("{}", LogLevel::Warning), "WARNING");
+        assert_eq!(format!("{}", LogLevel::Error), "ERROR");
+    }
+
+    #[test]
+    fn test_enum_equality() {
+        assert!(LogLevel::Info == LogLevel::Info);
+        assert!(LogLevel::Debug != LogLevel::Error);
+    }
+}
+
