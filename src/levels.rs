@@ -102,4 +102,3 @@ mod tests {
         assert!(LogLevel::Debug != LogLevel::Error);
     }
 }
-
