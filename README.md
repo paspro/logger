@@ -1,4 +1,4 @@
-# numerics
+# logger
 [![Rust](https://github.com/paspro/logger/actions/workflows/rust.yml/badge.svg)](https://github.com/paspro/logger/actions/workflows/rust.yml)
 
 This library implements a general purpose logger.
