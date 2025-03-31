@@ -1,0 +1,40 @@
+[package]
+name = "logger"
+version = "1.0.0"
+edition = "2024"
+description = "Implementation of a general purpose logger"
+keywords = ["logging"]
+license = "GPL-3.0-only"
+authors = ["Panos Asproulis <p.asproulis@icloud.com>"]
+rust-version = "1.85"
+
+[lib]
+name = "logger"
+path = "src/lib.rs"
+
+[dev-dependencies]
+rand = "0.9.0"
+
+[profile.release]
+opt-level = 3
+debug = 0
+lto = true
+panic = "abort"
+overflow-checks = false
+incremental = true
+strip = true
+codegen-units = 1
+debug-assertions = false
+rpath = false
+
+[profile.dev]
+opt-level = 0
+debug = 2
+lto = false
+panic = "unwind"
+overflow-checks = true
+incremental = true
+strip = false
+codegen-units = 1
+debug-assertions = true
+rpath = false
